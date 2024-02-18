@@ -17,7 +17,7 @@ int main(){
 
     while (true) {
         if(calibration){
-            mpu6050.getCalibration()
+            mpu6050.getCalibration();
             mpu6050.printConfig();
             mpu6050.printOffset();
             std::cout << "\n\n\n\n\n\n\n\n\n\n\n";
