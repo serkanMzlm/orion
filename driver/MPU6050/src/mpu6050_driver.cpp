@@ -173,7 +173,7 @@ void MPU6050::calibrate(){
 		acc_offset[X] += getAccelerationX();
 		acc_offset[Y] += getAccelerationY();
 		acc_offset[Z] += getAccelerationZ();
-		usleep(20000);
+		usleep(200);
 
 		float percentage = static_cast<float>(i) / COUNT * 100.0; 
 		std::cout << "\r" << "|";
