@@ -17,6 +17,7 @@ int main(){
 
     while (true) {
         if(calibration){
+            calibration = false;
             mpu6050.getCalibration();
             mpu6050.printConfig();
             mpu6050.printOffset();
