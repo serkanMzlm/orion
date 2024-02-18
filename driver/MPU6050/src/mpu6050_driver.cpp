@@ -173,7 +173,7 @@ void MPU6050::calibrate(){
 		acc_offset[X] += getAccelerationX();
 		acc_offset[Y] += getAccelerationY();
 		acc_offset[Z] += getAccelerationZ();
-		usleep(200);
+		usleep(20000);
 
 		float percentage = static_cast<float>(i) / COUNT * 100.0; 
 		std::cout << "\r" << "|";
@@ -203,8 +203,8 @@ void MPU6050::calibrate(){
 }
 
 void MPU6050::printConfig() const{
-    std::cout << "Accelerometer Range: +-" << ranges[ACC_R] << "g\n";
-    std::cout << "Gyroscope Range: +-" << ranges[GYR_R] << " degree per sec\n";
+    std::cout << "Accelerometer Range: +-" << ranges[ACC_R] << " g\n";
+    std::cout << "Gyroscope Range: +-" << ranges[GYR_R] << " deg/s\n";
     std::cout << "DLPF Range: " << ranges[DLPF_R] << " Hz\n";
 }
 

@@ -17,11 +17,13 @@ int main(){
 
     while (true) {
         if(calibration){
+            std::cout << "calibrate\n";
             calibration = false;
             mpu6050.getCalibration();
             mpu6050.printConfig();
             mpu6050.printOffset();
-            std::cout << "\n\n\n\n\n\n\n\n\n\n\n";
+            std::cout << "_______________________" << 
+                                    "\n\n\n\n\n\n\n\n\n\n\n";
         }
         mpu6050.cleanTerminal();
         mpu6050.printAcceleration();
