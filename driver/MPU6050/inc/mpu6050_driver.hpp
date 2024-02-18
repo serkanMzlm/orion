@@ -11,7 +11,7 @@ class MPU6050{
 private:
     int fd;
     char file_name[11];
-    bool calibrated = false;
+    bool calibrated = true;
     int barWidth = 50;
 
     int ranges[RANGE_ALL] = {260, 250, 2};
