@@ -15,8 +15,11 @@ private:
     int barWidth = 50;
 
     int ranges[RANGE_ALL] = {260, 250, 2};
-    double gyro_offset[CARTESIAN_ALL] = {0.0, 0.0, 0.0};
-    double acc_offset[CARTESIAN_ALL] = {0.0, 0.0, 0.0};
+    // double gyro_offset[CARTESIAN_ALL] = {0.0, 0.0, 0.0};
+    // double acc_offset[CARTESIAN_ALL] = {0.0, 0.0, 0.0};
+
+    double gyro_offset[CARTESIAN_ALL] = {-10.54, -0.71, -0.64};
+    double acc_offset[CARTESIAN_ALL] = {-0.07, 0.10, 0.05};
 
     const std::array<int, 4> accel_ranges{2, 4, 8, 16};
     const std::array<int, 4> gyro_ranges{250, 500, 1000, 2000};
