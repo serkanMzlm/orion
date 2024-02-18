@@ -108,6 +108,14 @@ double MPU6050::getAngularVelocityZ() const{
 	return gyro_z_converted;
 }
 
+bool MPU6050::getCalibration() const{
+    return calibrated;
+}
+
+void MPU6050::setCalibration(bool calibrated){
+    this->calibrated = calibrated;
+}
+
 int MPU6050::begin(){
     fd = open(file_name, O_RDWR);
     if(fd < 0){

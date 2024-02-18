@@ -15,6 +15,11 @@ int main(){
     signal(SIGINT, handleCtrlC);
 
     while (true) {
+        if(mpu6050.getCalibration()){
+            mpu6050.setCalibration(false);
+            mpu6050.printConfig();
+            mpu6050.printOffset();
+        }
         mpu6050.cleanTerminal();
         mpu6050.printAcceleration();
         mpu6050.printAngularVelocity();

@@ -44,6 +44,9 @@ public:
     double getAngularVelocityY() const;
     double getAngularVelocityZ() const;
 
+    bool getCalibration() const;
+    void setCalibration(bool calibrated = false);
+
 private:
     int begin();
     void readRangeConfig();
