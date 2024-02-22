@@ -8,22 +8,23 @@ void handleCtrlC(int signum) {
 
 int main(){
     MPU6050 mpu6050;
-    bool calibration = true;
-    // for(int i = 0; i < 10; i++) {
-    //     std::cout << "\n";
-    // }
 
-    signal(SIGINT, handleCtrlC);
-
-    while (true) {
-        if(calibration && mpu6050.getCalibration()){
+    if(mpu6050.getCalibration()){
             calibration = false;
             mpu6050.calibrate();
             mpu6050.printConfig();
             mpu6050.printOffset();
-            std::cout << "_______________________" << 
-                                    "\n\n\n\n\n\n\n\n\n\n\n";
-        }
+            std::cout << "_______________________";
+    }
+    for(int i = 0; i < 10; i++) {
+        std::cout << "\n";
+    }
+    
+
+    signal(SIGINT, handleCtrlC);
+
+    while (true) {
+        
         mpu6050.cleanTerminal();
         mpu6050.printAcceleration();
         mpu6050.printAngularVelocity();
