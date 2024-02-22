@@ -11,5 +11,6 @@ int main(){
     usleep(DELAY);
     writePin(pin, 1);
     getchar();
+    writePin(pin, 0);
     return 0;
 }
