@@ -19,7 +19,7 @@
 #define MPU6050_ADDR (0x68)
 
 #define GRAVITY (9.81f)
-#define COUNT (1)
+#define COUNT (1000)
 
 #ifndef M_PI 
     #define M_PI (3.14159265359) 

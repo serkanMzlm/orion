@@ -9,12 +9,11 @@ void handleCtrlC(int signum) {
 int main(){
     MPU6050 mpu6050;
 
-    if(mpu6050.getCalibration()){
-            mpu6050.calibrate();
-            mpu6050.printConfig();
-            mpu6050.printOffset();
-            std::cout << "_______________________";
-    }
+    mpu6050.calibrate();
+    mpu6050.printConfig();
+    mpu6050.printOffset();
+    std::cout << "_______________________";
+    
     for(int i = 0; i < 10; i++) {
         std::cout << "\n";
     }

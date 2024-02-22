@@ -11,7 +11,7 @@ class MPU6050{
 private:
     int fd;
     char file_name[11];
-    bool calibrated = true;
+    bool calibrated = false;
     int barWidth = 50;
 
     int ranges[RANGE_ALL] = {260, 250, 2};
@@ -43,9 +43,6 @@ public:
     double getAngularVelocityX() const;
     double getAngularVelocityY() const;
     double getAngularVelocityZ() const;
-
-    bool getCalibration() const;
-    void setCalibration(bool calibrated = false);
 
 private:
     int begin();
