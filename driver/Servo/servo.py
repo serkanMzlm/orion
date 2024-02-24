@@ -1,32 +1,15 @@
-import RPi.GPIO as GPIO
-import time
+import RPi.GPIO as GPIO  
+from time import sleep   
+GPIO.setmode(GPIO.BOARD) 
+pwmPin = 35
 
-# GPIO pin numarası
-pwmPin = 18
+GPIO.setup(pwmPin,GPIO.OUT) 
+p = GPIO.PWM(pwmPin, 50)    
+p.start(0)                  
 
-# PWM frekansı (Hz)
-pwmFrequency = 1000
+for i in range(4):
+    p.ChangeDutyCycle(i)     
+    sleep(1)                 
 
-# PWM duty cycle (0-100 arası)
-dutyCycle = 50
-
-# GPIO ayarları
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(pwmPin, GPIO.OUT)
-
-# PWM nesnesi oluştur
-pwm = GPIO.PWM(pwmPin, pwmFrequency)
-
-try:
-    # PWM'yi başlat
-    pwm.start(dutyCycle)
-    
-    # Sonsuz döngü
-    while True:
-        # Devam etmek için Ctrl+C'ye basılana kadar bekleyin
-        time.sleep(1)
-
-except KeyboardInterrupt:
-    # Ctrl+C'ye basılınca PWM'yi durdur
-    pwm.stop()
-    GPIO.cleanup()
+p.stop()         
+GPIO.cleanup()   
